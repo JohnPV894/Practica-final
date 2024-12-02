@@ -1,0 +1,12 @@
+{
+    "name": "johnsaf/practica-final",
+    "description": "Sistema de gestion empresarial (ERP)",
+    "authors": [
+        {
+            "name": "John Arenales"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.19"
+    }
+}
