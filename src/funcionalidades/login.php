@@ -12,29 +12,59 @@ function obtenerClienteMongoDB()
     //"mongodb+srv://$usuario:$pass@cluster0.6xkz1.mongodb.net/"
     return $cliente;
 }
-function mostrarBasesDeDatos()
+function agregarUsuario($id,$nombreusuario,$contra,$rol)
 {
-    $listaBD=[];
-    $cliente = obtenerClienteMongoDB();
-    $basesDeDatos = $cliente->listDatabases();
-
-    //Atencion basesDeDatos es un objeto de la clase mongoDB CUIDADO AL ITERAR
-    foreach ($basesDeDatos as $cadaBaseDeDatos) {
-        array_push( $listaBD, $cadaBaseDeDatos->getName());
-    }
-
-    //El metodo getName devuelve un dato string normal
-    for ($i=0; $i <sizeof( $listaBD) ; $i++) { 
-        echo"Data Base N°".($i+1).":". $listaBD[$i] ."<br>";
-    }
- 
-    return $listaBD;
+    $objeto_mongo_usuario=[ 
+        "_id"=>$id,
+        "nombreUsuario" => $nombreusuario,
+        "contraUsuario" => $contra,
+        "rol"=>$rol
+  
+  ];
+    $mongo = obtenerClienteMongoDB();
+    $bd = $mongo->selectDatabase("ERP");
+    $coleccionUsuarios = $bd ->selectCollection("usuarios");
+    $coleccionUsuarios->insertOne($objeto_mongo_usuario);
 }
-mostrarBasesDeDatos();
 
-$objeto_mongo_usuario=[ 
-      "_id"=>1,
-      "nombreUsuario" => "admin",
-      "contraUsuario" => "admin"
 
-];
+
+// Objeto mongo
+$mongo = obtenerClienteMongoDB();
+$bd = $mongo->selectDatabase("ERP");
+$coleccionUsuarios = $bd ->selectCollection("usuarios");
+
+
+//Validar un inicio de sesion 
+
+//1 recuperar del archivo html las credenciales y almacenarlas en variables 
+$contraUsuario = $_POST["contra"];
+$nombreUsuario = $_POST["nombreusuario"];
+
+
+//2 validar que no esten vacios
+if (!empty($contraUsuario) && !empty($nombreUsuario)) {//Comprobacion de que la variable no esta vacia
+
+    echo "Formulario no esta vacio";
+    //3 recuperar el objeto de la collecion usuario de mongo db
+    if ($coleccionUsuarios ->findOne(['nombreUsuario' =>$nombreUsuario ]) and 
+        $coleccionUsuarios ->findOne(['contraUsuario' =>$contraUsuario ])) {
+        echo "credenciales Correctas";
+           
+        header("location:http://localhost:3000/src/interfaces/inicio.html");
+    }
+    else {
+        echo "credenciales Incorrectas";
+        header("location:http://localhost:3000/src/interfaces/login.html");
+    }
+
+}else{
+    //echo "formulario esta vacio";
+    header("location:http://localhost:3000/src/interfaces/login.html");
+    
+}
+
+
+
+//4 recorrer y validar si las credenciales son correctas
+//ultimo devolver con header al login.html o a inicio.html dependiendo de las credenciales
