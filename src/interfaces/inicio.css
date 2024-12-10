@@ -1,0 +1,55 @@
+*{
+   padding: 0;
+   margin: 0;
+   font-family: system-ui,'Segoe UI', Roboto, sans-serif;
+}
+body{
+   width: 100%;
+   flex-wrap: wrap;
+   display: flex;
+   flex-direction:row-reverse;
+}
+header{
+   background: black;
+   color: white;
+   height: 20%;
+   width: 94.5%;
+   order: 1;
+}
+aside{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+   width: 5.5%;
+   order: 2;
+   background: rgb(146, 146, 146);
+}
+section{
+   order: 3;
+   width: 94%;
+   background: red;
+}
+/**/
+header>h1{
+   text-align: center;
+   padding: 15px 0px;
+}
+aside>a{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   width: 100%;
+
+}
+aside>a:hover{
+   background: rgba(233, 233, 233, 0.671);
+}
+aside>a:first-child{
+   margin-top: 1em;
+}
+aside>a:last-child{
+   color: aliceblue;
+   margin-top: auto;/*ocupa todo el "espacio vacío" para alinear el elemento hacia abajo*/
+}
