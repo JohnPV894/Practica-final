@@ -1,0 +1,121 @@
+   *{
+         padding: 0;
+         margin: 0;
+         font-family: system-ui,'Segoe UI', Roboto, sans-serif;
+   }
+   body{
+      display: flex;
+      flex-wrap: wrap;
+      height:100% ;
+      width: 100%;
+   }
+   header{
+      background: black;
+      color: white;
+      width: 100%;
+   }
+   section{
+      display:flex ;
+      flex-direction: column;
+
+      width: 94.5%;
+      background: #FFF6F6;
+   }
+   
+   aside{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 5.5%;
+      order: 0;
+      background: rgb(146, 146, 146);
+   }
+   /**/
+   header>h1{
+      text-align: center;
+      font-size: 2.3em;
+      font-weight: 600;
+      padding: 15px 0px;
+   }
+   aside>a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 100%;
+   }
+   aside>a>img{
+      width: 50px;
+      height: 50px;
+   }
+   aside>a:hover{
+      background: rgba(233, 233, 233, 0.671);
+   }
+
+   aside>a:last-child{
+      color: aliceblue;
+      margin-top: auto;/*ocupa todo el "espacio vacío" para alinear el elemento hacia abajo*/
+   }
+   /**/
+   .navegacion{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: 95%;
+   }
+   /*Boton lupa*/
+
+   .lupa{
+      width: 30px;
+      height: 30px;
+   }
+   .buscar{
+      display: flex;
+      width: 18%;
+      background: white;
+      padding: 8px 12px;
+      margin: 20px 0px;
+      border-radius: 12px;
+      border: solid 1px gray;
+
+   }
+   .buscar>input{
+      font-size: 1.2em;
+      background: fixed;
+      width: 90%;
+      border: 0;
+
+   }
+   /*Boton De navegacion con el simbolo + */
+   .agregarAlumno{
+      border: solid 1px gray;
+      border-radius: 12px;
+      background: white;
+      margin: 20px 0px;
+      width: 5%;
+
+   }
+   .agregarAlumno:hover{
+      background: rgb(228, 228, 228);
+   }
+   .agregarAlumno:active{
+      background: rgb(255, 255, 255);
+   }
+   .agregarAlumno>img{
+      width:30px ;
+   }
+   /*/*/
+   .contenedor-cards{
+      width: 90%;
+      display: flex;
+      padding: 20px 50px;
+      column-gap: 20px;
+   }
+   .card{
+      border: solid 1px;
+   }
+   hr{
+      text-align: center;
+      
+   }
