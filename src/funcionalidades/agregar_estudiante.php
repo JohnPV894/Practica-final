@@ -62,17 +62,17 @@ $formacion=[];
 foreach($coleccionUsuarios->find() as $objUsuarios){
     //foreach($objUsuarios[ ])
     $lista[]=[
-        $id=>$objUsuarios["_idAlumno"],
-        $nombre=>$objUsuarios["nombreAlumno"]+$objUsuarios["apellidoAlumno"],
-        $dni=>$objUsuarios["dni"],
-        $telefono=>$objUsuarios["telefono"],
-        $correo=>$objUsuarios["correo"],
-        $trabajando=>$objUsuarios["trabajando"],
-
-
+        "id"=>$objUsuarios["_idAlumno"],
+        "nombre"=>$objUsuarios["nombreAlumno"]." ".$objUsuarios["apellidoAlumno"],
+        "dni"=>$objUsuarios["dni"],
+        "telefono"=>$objUsuarios["telefono"],
+        "correo"=>$objUsuarios["correo"],
+        "formaciones"=>'$objUsuarios["formaciones"]',//Descomentar cuando decidar lidiar con materias y notas
+        "trabajando"=>$objUsuarios["trabajando"],
     ];
-    echo json_encode($objUsuarios);
+
 }
+echo json_encode($lista);
 //    echo json_encode($objUsuarios["_id"]);
 
 //agregarEstudiante("John","Arenales","60333777B","111111111","johndoe@gmail.com",
