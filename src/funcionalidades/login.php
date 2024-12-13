@@ -1,17 +1,8 @@
 <?php
 require __DIR__ .'/../../vendor/autoload.php'; // Carga automática de dependencias
+require 'config/config.php';
 
 
-function obtenerClienteMongoDB()
-{
-    $cluster = "cluster0.6xkz1.mongodb.net/";
-    $usuario = rawurlencode("santiago894");
-    $pass = rawurlencode("P5wIGtXue8HvPvli");
-    $cadenaConexion = sprintf("mongodb+srv://%s:%s@%s", $usuario, $pass, $cluster);
-    $cliente = new MongoDB\Client($cadenaConexion);
-    //"mongodb+srv://$usuario:$pass@cluster0.6xkz1.mongodb.net/"
-    return $cliente;
-}
 function agregarUsuario($id,$nombreusuario,$contra,$rol)
 {
     $objeto_mongo_usuario=[ 
@@ -28,7 +19,7 @@ function agregarUsuario($id,$nombreusuario,$contra,$rol)
 }
 
 
-
+ 
 // Objeto mongo
 $mongo = obtenerClienteMongoDB();
 $bd = $mongo->selectDatabase("ERP");
