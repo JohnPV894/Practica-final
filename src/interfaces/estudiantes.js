@@ -1,18 +1,3 @@
-/*
-                        <div class="card">
-                              <div class="color"><img src="" alt=""><input type="button" value="" placeholder="Editar"></div>
-                              <div class="nombre"></div>
-                              <h2>Contacto</h2>
-                              <p>Telefono</p>
-                              <div class="telefono"></div>
-                              <br>
-                              <p>Correo</p>
-                              <div class="correo"></div>
-                              <hr>
-                              <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                              <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
-                        </div>
- */
 
 $(document).ready(function () {
       try{
@@ -27,30 +12,25 @@ $(document).ready(function () {
                         datosRecibidos.forEach(element => {
                               const estructuraHtml_card=`
                               <div class="card">
-                                    <div class="color"><img src="" alt=""><input type="button" value="" placeholder="Editar"></div>
+                                    <div class="color">
+                                          <img src="./img/user.png" alt=""><input type="button" value="Editar" class="editarAlumno" >
+                                    </div>
                                     <div class="id" style="display: none;">${element.id}</div>
-                                    <div class="nombre"  >${element.nombre}</div>
+                                    <div class="nombre" >${element.nombre}</div>
                                     <h2>Contacto</h2>
                                     <p>Telefono</p>
                                     <div class="telefono">${element.telefono}</div>
-                                    <br>
+                                    
                                     <p>Correo</p>
                                     <div class="correo">${element.correo}</div>
-                                    <hr>
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
+                                    <hr>                              
+                                    <div class="contenedor-botones">
+                                          <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
+                                          <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
+                                    </div>
                               </div>`
                               $(".contenedor-cards").append(estructuraHtml_card);
                         });
-                        //for (const cadaElemento of datos) {
-                        //      console.log(datos[cadaElemento]);
-
-                        //      style="display: none;
-                        //      
-                        //}
-
-
-
 
                   }
             });
@@ -58,4 +38,9 @@ $(document).ready(function () {
       catch{
             console.error("error al recuperar datos de Php \n Verificar 'http://localhost:3000/src/funcionalidades/agregar_estudiante.php' ")
       }
+
+      $(".agregarAlumno").click(function () { 
+            $(".formulario-alumno").fadeIn();
+
+      });
 });
