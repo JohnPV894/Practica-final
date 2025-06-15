@@ -10,7 +10,7 @@
       width: 100%;
    }
    header{
-      background: black;
+      background: rgb(24, 24, 24);
       color: white;
       width: 100%;
    }
@@ -39,14 +39,38 @@
       position: fixed;
       width: 100%;
       height: 100vh;
-      background: rgba(128, 128, 128, 0.438);
+      background: rgba(85, 85, 85, 0.473);
    }
    .formulario-alumno>form{
       display: flex;
       flex-direction: column;
       background: rgb(221, 221, 221);
+      padding: 10px 15px;
+      border-radius: 10px;
       width: 25%;
-      height: 50%;
+      height: 73%;
+   }
+   .formulario-alumno>form>h1{
+      text-align: center;
+   }
+   .formulario-alumno>form>input{
+
+      border-radius: 15px;
+      padding: 5px 15px;
+      border: solid rgba(128, 128, 128, 0.897) 1px;
+   }
+   .formulario-alumno>form>p{
+      margin-top: 20px;
+   }
+   /*Botones formulario*/
+   .botones{
+      text-align: center;
+   }
+   .enviar,.cancelar{
+      width: 22%;
+      padding: 5px 3px;
+      border-radius: 5px;
+      border: solid rgba(128, 128, 128, 0.897) 0.5px;
    }
    /*Fin modal*/
    header>h1{

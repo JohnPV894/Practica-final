@@ -25,8 +25,8 @@ $(document).ready(function () {
                                     <div class="correo">${element.correo}</div>
                                     <hr>                              
                                     <div class="contenedor-botones">
-                                          <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                                          <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
+                                          <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>Titulos</button></a>
+                                          <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>CV</button></a>
                                     </div>
                               </div>`
                               $(".contenedor-cards").append(estructuraHtml_card);
@@ -41,6 +41,10 @@ $(document).ready(function () {
 
       $(".agregarAlumno").click(function () { 
             $(".formulario-alumno").fadeIn();
+      });
+      $(".cancelar").click(function () { 
+            $(".formulario-alumno").fadeOut();
 
       });
+
 });

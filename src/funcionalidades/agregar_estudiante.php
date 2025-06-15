@@ -1,7 +1,7 @@
 <?php
 require __DIR__ .'/../../vendor/autoload.php'; // Carga automática de dependencias
 require 'config/config.php';
-
+   
 function validarColeccion($nombreColeccion) {//si no existem documentos en esa coleccion devuelve false y si no devuelve el numero de documentos de esa coleccion
     $mongo = obtenerClienteMongoDB(); 
     $bd = $mongo->selectDatabase("ERP"); // Selecciona la base de datos
@@ -38,13 +38,13 @@ function agregarEstudiante($nombreEstudiante,$apellidoAlumno, $dni,$telefono,$co
         "trabajando"=> $bool_trabaja//Verdero o falso
   ];
     $mongo = obtenerClienteMongoDB();
-    $bd = $mongo->selectDatabase("ERP");
+    $bd = $mongo ->selectDatabase("ERP");
     $coleccionUsuarios = $bd ->selectCollection("estudiantes");
-    $coleccionUsuarios->insertOne($objeto_mongo_estudiante);
+    $coleccionUsuarios -> insertOne($objeto_mongo_estudiante);
 }
 $mongo = obtenerClienteMongoDB();
-$bd = $mongo->selectDatabase("ERP");
-$coleccionUsuarios = $bd ->selectCollection("estudiantes");
+$bd = $mongo -> selectDatabase("ERP");
+$coleccionUsuarios = $bd -> selectCollection("estudiantes");
 
 $lista=[];
 $formacion=[];
@@ -56,7 +56,7 @@ foreach($coleccionUsuarios->find() as $objUsuarios){
         "dni"=>$objUsuarios["dni"],
         "telefono"=>$objUsuarios["telefono"],
         "correo"=>$objUsuarios["correo"],
-        "formaciones"=>'$objUsuarios["formaciones"]',//Descomentar cuando decidar lidiar con materias y notas
+        "formaciones"=>'$objUsuarios["formaciones"]',
         "trabajando"=>$objUsuarios["trabajando"],
     ];
 
@@ -73,4 +73,4 @@ echo json_encode($lista);
 //    ]
 //    ,false);
 
-//validarColeccion("estudiantes");
+

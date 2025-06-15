@@ -42,7 +42,8 @@ if (!empty($contraUsuario) && !empty($nombreUsuario)) {//Comprobacion de que la 
         $coleccionUsuarios ->findOne(['contraUsuario' =>$contraUsuario ])) {
         echo "credenciales Correctas";
            
-        header("location:http://localhost:3000/src/interfaces/inicio.html");
+        header("location:http://localhost:3000/src/interfaces/inicio    .html");
+        header("location:http://localhost:3000/src/interfaces/inicio                    .html");
     }
     else {
         echo "credenciales Incorrectas";
@@ -55,7 +56,5 @@ if (!empty($contraUsuario) && !empty($nombreUsuario)) {//Comprobacion de que la 
     
 }
 
-
-
 //4 recorrer y validar si las credenciales son correctas
-//ultimo devolver con header al login.html o a inicio.html dependiendo de las credenciales
+//ultimo devolver con header al login.html o a inicio.html dependiendo de las credenciales 

@@ -20,38 +20,40 @@
                   <a href=""><img src="/src/interfaces/img/setting.png" alt="Config"></a>
             </aside>
             <!--Modal-->
-            <div class="formulario-alumno" style="">
+            <div class="formulario-alumno" style="display:none">
                   <form action="" method="post" >
+                        <h1>Agregar Estudiante</h1>
                         <p>Nombre</p>
-                        <input type="text" placeholder="Nombre...">
+                        <input type="text" placeholder="Nombre..." name="nombre">
                         <p>Apellidos</p>
-                        <input type="text" placeholder="Apellidos...">
+                        <input type="text" placeholder="Apellidos..." name="apellido">
                         <p>DNI</p>
-                        <input type="text" placeholder="DNI...">
+                        <input type="text" placeholder="DNI..." name="dni">
                         <p>Telefono</p>
-                        <input type="text" placeholder="Telefono...">
+                        <input type="text" placeholder="Telefono..." name="telefono">
                         <p>Correo</p>
-                        <input type="text" placeholder="Correo..." >
+                        <input type="text" placeholder="Correo..." name="correo">
             
-                        <label for="lang">Formacion</label>
+                        <p>Formacion</p>
                         <select name="formacion" class="formacion">
-                          <option value="">Selecciona Formacion</option>
-                          <option value="">Informatica</option>
-                          <option value="">Gestion</option>
-                          <option value="">TCAE</option>
-                        <p>Trabajando</p>
+                          <option value="none">Selecciona Formacion</option>
+                          <option value="Informatica">Informatica</option>
+                          <option value="gestion">Gestion</option>
+                          <option value="tcae">TCAE</option>
                         <input type="checkbox" name="trabaja" id="">
-                        <div><input type="submit" value="Enviar"> <input type="button" value="Cancelar"></div>
+                        <p>Trabajando</p>
+                        
+                        <div class="botones"><input type="submit" value="Enviar" class="enviar"> <input type="button" value="Cancelar" class="cancelar"></div>
                   </form>
             </div>
-            <!--Modal-->
+            <!--FIN Modal-->
             <section>
                   <div class="navegacion">
                         <nav class="buscar">
                               <input type="text" placeholder="Buscar Alumno Por ID..." class="mostrarBusqueda">
                               <div><img src="/src/interfaces/img/loupe.png" alt="" class="lupa"> </div>     
                         </nav>
-                        <button class="agregarAlumno"><img src="/src/interfaces/img/add (1).png" alt=""></button>
+                        <button class="agregarAlumno"> <img src="/src/interfaces/img/add (1).png" alt=""> </button>
                   </div>
 
                   <div class="contenedor-cards">
@@ -69,8 +71,8 @@
                               <div class="correo">johndoe@gmail.com</div>
                               <hr>
                               <div class="contenedor-botones">
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
+                                    <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>Titulos</button></a>
+                                    <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>CV</button></a>
                               </div>
                         </div>
                         <div class="card">
@@ -87,28 +89,11 @@
                               <div class="correo">johndoe@gmail.com</div>
                               <hr>
                               <div class="contenedor-botones">
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
+                                    <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>Titulos</button></a>
+                                    <a href="/src/interfaces/img/cvjpg.jpg" download="add (1).png"><button>CV</button></a>
                               </div>
                         </div>
-                        <div class="card">
-                              <div class="color">
-                                    <img src="./img/user.png" alt=""><input type="button" value="Editar" class="editarAlumno" >
-                              </div>
-                              <div class="id" style="display: none;">1</div>
-                              <div class="nombre"  >John Arenales</div>
-                              <h2>Contacto</h2>
-                              <p>Telefono</p>
-                              <div class="telefono">111111111</div>
-                              
-                              <p>Correo</p>
-                              <div class="correo">johndoe@gmail.com</div>
-                              <hr>
-                              <div class="contenedor-botones">
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>Titulos</button></a>
-                                    <a href="/src/interfaces/img/add (1).png" download="add (1).png"><button>CV</button></a>
-                              </div>
-                        </div>
+                        
                   </div>
             </section>
 
